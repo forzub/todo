@@ -1,0 +1,171 @@
+.modalBk{
+  display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    background: #ccc;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.form_modal{
+  width: 500px;
+    padding: 60px 25px 25px 25px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 15px;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+.md_input{
+  flex: 1 0 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    outline:none;
+    padding: 10px;
+}
+
+.btn{padding: 10px;border-radius: 5px;}
+
+.md_bt_close{
+  position: absolute;
+  top: 15px;right: 25px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+    line-height: 0;
+    align-items: center;
+}
+
+h4.titul{
+  position: absolute;
+  top: 0px;
+  left: 25px;
+}
+
+
+.ttr_form_new_task{
+  display: flex;
+  flex-wrap: wrap;
+}
+.ttr_form_new_task p
+{width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;}
+
+  .ttr_form_new_task label{
+    margin-bottom: 5px;
+  }
+
+.ttr_form_new_task input{
+margin-bottom: 15px;
+padding: 5px;
+ }
+
+.ttr_form_new_task .but_wrp{
+  margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.ttr_form_new_task button{padding: 5px 10px;}
+
+.task_filter{
+  display: flex;
+    padding: 10px 5px;
+    background: #ddd;
+    border-bottom: 3px solid #aaa;
+    padding-right: 22px;
+    /* position: absolute;
+    width: 100%; */
+}
+
+.tf_title{flex: 1 0 auto; display: flex;align-items: baseline; justify-content: space-evenly;
+border-right: 1px solid #ccc;}
+
+.tf_dedline{flex: 0 0 15%; display: flex;align-items: baseline; justify-content: space-evenly;
+border-right: 1px solid #ccc;}
+
+.tf_done{flex: 0 0 20%; display: flex;align-items: baseline; justify-content: space-evenly;}
+
+.tl_title{flex: 1 0 auto; display: flex;align-items: baseline; justify-content: space-evenly;
+border-right: 1px solid #ccc;}
+
+.tl_dedline{flex: 0 0 15%; display: flex;align-items: baseline; justify-content: space-evenly;
+border-right: 1px solid #ccc;}
+
+.tl_done{flex: 0 0 20%; display: flex;align-items: baseline; justify-content: space-evenly;}
+
+
+.tf_after_up:after, .tf_after_down:after, .tf_after_def:after{ 
+  content: ''; display: block; width: 0;height: 0;
+  border: 0 solid transparent;
+  border-right-width: 5px;
+  border-left-width: 5px;
+  border-bottom: 5px solid black;
+}
+
+.task_filter>div{
+  cursor: pointer;
+  -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+  .tf_after_down:after{
+  border: 0 solid transparent;
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-top: 5px solid black;
+}
+
+.tf_after_def:after{
+  border: 1px solid black;
+  width: 7px;
+  height: 7px;
+  
+}
+
+.task_list, .tl_item{
+list-style: none;
+padding: 0;margin: 0;
+text-align: left;}
+
+.tl_item{
+  padding: 10px 5px;
+  position: relative;
+  display: flex;
+}  
+.tl_begin{
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  color:#aaa;
+  font-size: 10px;
+}
+.tl_item>div{justify-content: space-between;padding: 5px;max-width: 291px;}
+.tl_item:nth-child(even){background: #eeeeee;}
+.tl_item .tl_dedline{font-size: 12px;}
+
+.tl_item .tl_done input{margin: 0 auto;}
+.tl_item .tl_dedline{font-size: 10px;justify-content: center;align-items: center;}
+
+.tl_title_tx{display: inline-block;max-width: 220px;}
+.tl_item .tl_title, .tl_item .tl_done{align-items: center;}
+
+.button_box{
+  display: flex;
+  justify-content: space-between;
+}
