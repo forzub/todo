@@ -1,0 +1,172 @@
+*{box-sizing: border-box;}
+
+.tt_r_mess{padding: 15px;text-align: center;}
+
+.tt_section{
+  width: 100%;
+}
+
+.tt_wrp{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tt_content{
+  border:1px solid #ccc;
+  display: flex;
+  height: 50vh;
+}
+
+.tt_left{
+  border:1px solid #ccc;
+  width: 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  padding-left: 20px;
+  position: relative;
+}
+
+.tt_l_filter{
+  margin: 10px 0;
+  padding-right: 20px;
+}
+
+
+
+.tt_l_monitor{
+  flex: 1 0 auto;
+  border:1px solid #ccc;
+  overflow-y: scroll;
+  max-height: 270px;
+}
+
+.tt_l_control{
+  margin: 10px 0;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    background: #fff;
+  border: 1px solid #ccc;
+ 
+}
+
+.tt_l_input{
+  width: 100%;
+  border-radius: 50px;
+  padding: 10px;
+  outline: none;
+  border:1px solid #ccc;
+}
+
+.tt_btn{
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 7px;
+}
+
+
+
+.tt_right{  
+  border:1px solid #ccc;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.tt_r_filter{
+  margin: 10px 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+    justify-content: space-between;
+}
+.tt_r_monitor{
+  flex: 1 0 auto;
+  border:1px solid #ccc;
+  overflow-y: scroll;
+  max-height: 225px;
+  position: relative;
+}
+.tt_r_control{
+  margin: 10px 20px;
+}
+
+.tt_r_group>label{font-size: 0.9em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;}
+
+.tt_r_group{
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.tt_r_input{
+  width: 100%;
+  border-radius: 50px;
+  padding: 10px;
+  outline: none;
+  border:1px solid #ccc;
+}
+
+.tt_r_btn, .tt_l_btn{
+  flex: 0 0 40%;
+  
+}
+
+.tt_x_btn{
+position: absolute;
+right: 10px;
+border-radius: 50%;
+border:1px solid #ccc;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.tt_xl_btn{
+  top: 18px;
+  right: 28px;
+}
+
+.ttf_add_items{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  
+}
+
+.ttf_input{flex: 1 0 auto}
+.ttf_input_but{
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.lists{padding: 0;margin: 0;}
+.ttl_list_item{
+  list-style: none;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.lst_link{
+flex: 1 0 auto;
+}
+
+.lst_btn{
+margin-left: 5px;
+}
