@@ -1,13 +1,19 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import Login from './components/forms/Login';
+import SignUp from './components/forms/SignUp';
 import TTSection from './components/modules/TTSection';
 import { loadListFromBase } from './store/todo';
 
 
 function App() {
   const dispatch = useDispatch();
+
+  const isSignIn = useSelector(store => store.auth.isSignIn);
+  const isSignUp = useSelector(store => store.auth.isSignUp);
+  console.log('isSignin', isSignIn);
+  console.log('isSignUp', isSignUp);
 
   useEffect(
     () => { dispatch(loadListFromBase()); }, []
@@ -16,12 +22,8 @@ function App() {
   return (
     <div className="wrapper">
       <main className="main">
-        <Routes>
-          {/* <Route path='/' element={<Navigate to='/home' />} ></Route>
-          <Route path='/home' element={<TTSection />}  ></Route> */}
-
-        </Routes>
-        <TTSection />
+          {isSignIn ? <TTSection /> : 
+          isSignUp ? <SignUp /> : <Login />}        
       </main>
     </div>
   );

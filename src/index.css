@@ -23,3 +23,20 @@ main{
 }
 
 .ll_active{background-color: #ccc;}
+
+.login-box{
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+form>input{margin-bottom: 20px;margin-bottom: 20px!important;}
+form>span{margin-bottom: 20px !important}
+form button{display: inline-block;width: auto;}
+form>label{margin-bottom: 20px !important;}

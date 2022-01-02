@@ -35,10 +35,11 @@
 
 
 .tt_l_monitor{
-  flex: 1 0 auto;
   border:1px solid #ccc;
   overflow-y: scroll;
-  max-height: 270px;
+  padding-bottom: 55px;
+  height: 100%;
+    box-sizing: border-box;
 }
 
 .tt_l_control{
@@ -85,11 +86,12 @@
     justify-content: space-between;
 }
 .tt_r_monitor{
-  flex: 1 0 auto;
   border:1px solid #ccc;
   overflow-y: scroll;
-  max-height: 225px;
   position: relative;
+  padding-bottom: 55px;
+  height: 100%;
+    box-sizing: border-box;
 }
 .tt_r_control{
   margin: 10px 20px;
