@@ -1,5 +1,6 @@
 import React from 'react';
 import Style from './TTSection.module.css';
+import './TTSectionMin.css';
 import clone from 'ramda/src/clone';
 import isEmpty from 'ramda/src/isEmpty';
 import { Routes, Route } from 'react-router-dom';
@@ -14,7 +15,7 @@ import MyInput from '../base/MyInput';
 import { searchedList, sortByIncludeFields } from './TTUtils';
 import TTTaskFilter from './TTTaskFilter';
 import { serchResetFilter } from '../../store/searches';
-
+import { Switch } from 'antd';
 
 
 const TTTasks = () => {
@@ -33,7 +34,7 @@ const TTTasks = () => {
   const checkboxOnChange = () => { dispatch(searchTaskCheckChange()); }
   const onNewTaskShow = () => { dispatch(newTasktoggle()); dispatch(hidden()); }
 
-  
+  const onSwitchChange = (checked)=>{console.log(`switch to ${checked}`);}
 
   let render = {};
 
@@ -48,9 +49,9 @@ const TTTasks = () => {
     <>
       <div className={Style.tt_right}>
         <div className={Style.tt_r_filter}>
-          <div className={Style.tt_r_group}>
+          <div className={`${Style.tt_r_group} ${Style.tt_filter_input}`}>
             <MyInput
-              className={Style.tt_r_input}
+              className={`${Style.tt_r_input}`}
               type='text'
               placeholder='фильтровать'
               onChange={onChangeSearch}
@@ -62,7 +63,7 @@ const TTTasks = () => {
               onClick={onClickSearch}
             >x</MyButton>
           </div>
-          <div className={Style.tt_r_group}>
+          <div className={`${Style.tt_r_group} ${Style.tt_filter_ck}`}>
             <MyInput
               id='input_chkbx'
               type='checkbox'
@@ -106,7 +107,7 @@ const TTTasks = () => {
           <div className="button_box">
             <MyButton
               type='button'
-              className={`${Style.tt_l_btn} ${Style.tt_btn}`}
+              className={`${Style.tt_newtask_btn} ${Style.tt_btn}`}
               disabled={isTaskButDisabled && true}
               onClick={onNewTaskShow}
             >
@@ -117,6 +118,10 @@ const TTTasks = () => {
               className={`${Style.tt_l_btn} ${Style.tt_btn}`}
               onClick={() => dispatch(serchResetFilter())}
             >Сброс сорт.</MyButton>
+            <div className="switch_box">
+              <Switch defaultChecked onChange={onSwitchChange} />
+              <div className="switch-tx">Ночная тема</div>
+            </div>
           </div>
         </div>
       </div>

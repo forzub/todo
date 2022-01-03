@@ -3,19 +3,21 @@ import Paragraph from 'antd/lib/typography/Paragraph';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import { authOpenLogin } from '../../store/auth';
+import { authOpenLogin, authPushUserData, authCreateAccountOnBase } from '../../store/auth';
 
 
 
 const SignUp = () => {
     const dispatch = useDispatch();
 
-    const onSubmit = values => { 
-        console.log('SUBMIT', values); 
-        
+    const onSubmit = values => {
+        console.log('SUBMIT', values);
+        const user = { name: values.email, password: values.password };
+        dispatch( authPushUserData(user) );
+        dispatch( authCreateAccountOnBase() );
     };
 
-    const onClickLogin = () => {   dispatch( authOpenLogin() ); }
+    const onClickLogin = () => { dispatch(authOpenLogin()); }
 
     const validationSchema = yup.object().shape({
         email: yup.string().required().email(),
@@ -31,7 +33,7 @@ const SignUp = () => {
         agree: false,
     }
 
-    const formik = useFormik({ initialValues,  onSubmit, validationSchema, validateOnMount: true });
+    const formik = useFormik({ initialValues, onSubmit, validationSchema, validateOnMount: true });
 
     return (
         <div className="login-box">
@@ -43,7 +45,7 @@ const SignUp = () => {
                     value={formik.values.email}
                     validateOnBlur
                     onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}/>
+                    onBlur={formik.handleBlur} />
                 {formik.touched.email && formik.errors.email && <Paragraph type="danger">{formik.errors.email}</Paragraph>}
                 <Input.Password
                     name='password'
@@ -59,16 +61,16 @@ const SignUp = () => {
                     value={formik.values.confirmPassword}
                     onBlur={formik.handleBlur}
                     onChange={formik.handleChange} />
-                { formik.touched.confirmPassword && formik.errors.confirmPassword && <Paragraph type="danger">{formik.errors.confirmPassword}</Paragraph> }
+                {formik.touched.confirmPassword && formik.errors.confirmPassword && <Paragraph type="danger">{formik.errors.confirmPassword}</Paragraph>}
                 <Checkbox
                     name='agree'
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     checked={formik.values.agree}
                 >Agree to terms</Checkbox>
-                
+
                 <Row justify='space-between'>
-                    <Button type='primary' htmlType='submit' disabled={!formik.values.agree || formik.errors.password || formik.errors.confirmPassword  || formik.errors.email}>Sign Up</Button>
+                    <Button type='primary' htmlType='submit' disabled={!formik.values.agree || formik.errors.password || formik.errors.confirmPassword || formik.errors.email}>Sign Up</Button>
                     <Button type='default' onClick={onClickLogin} >Login</Button>
                 </Row>
             </form>

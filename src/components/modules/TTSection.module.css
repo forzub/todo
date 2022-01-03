@@ -57,7 +57,7 @@
 .tt_l_input{
   width: 100%;
   border-radius: 50px;
-  padding: 10px;
+  padding: 5px 10px;
   outline: none;
   border:1px solid #ccc;
 }
@@ -110,17 +110,35 @@
   position: relative;
 }
 
+.tt_filter_input{
+  width: 57%;
+}
+.tt_filter_ck{
+  width: 40%;
+}
+
 .tt_r_input{
   width: 100%;
   border-radius: 50px;
-  padding: 10px;
+  padding: 5px 10px;
   outline: none;
   border:1px solid #ccc;
 }
 
-.tt_r_btn, .tt_l_btn{
+.tt_r_btn{
   flex: 0 0 40%;
-  
+}
+
+.tt_l_btn{
+  flex: 0 0 30%;
+}
+
+.tt_newtask_btn{
+  flex: 0 0 40%;
+}
+
+.tt_newList_btn{
+  width: 90%;
 }
 
 .tt_x_btn{
@@ -146,13 +164,15 @@ width: 20px;
   width: 100%;
   padding: 10px;
   display: flex;
-  
+  flex-direction: row;
 }
 
 .ttf_input{flex: 1 0 auto}
 .ttf_input_but{
-  padding: 5px;
+  padding: 0px;
   margin-left: 5px;
+  width: 23px;
+  height: 28px;
 }
 
 .lists{padding: 0;margin: 0;}

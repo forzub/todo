@@ -56,6 +56,8 @@ h4.titul{
 .ttr_form_new_task{
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
+    width: auto;
 }
 .ttr_form_new_task p
 {width: 100%;
@@ -169,3 +171,15 @@ text-align: left;}
   display: flex;
   justify-content: space-between;
 }
+
+.switch_box {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  align-items: center;
+  text-align: center;
+  font-size: 10px;
+}
+.switch-tx{
+  padding-top: 3px;
+} 

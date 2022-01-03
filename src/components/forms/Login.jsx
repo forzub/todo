@@ -3,20 +3,20 @@ import Paragraph from 'antd/lib/typography/Paragraph';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import { authOpenRegistration, authRequestToBase } from '../../store/auth';
+import { authOpenRegistration, authRequestToBase, authPushUserData } from '../../store/auth';
 
 
 
 const Login = () => {
     const dispatch = useDispatch();
 
-    const onSubmit = values => { 
-        // console.log('SUBMIT', values); 
+    const onSubmit = values => {  
+        const user = { name: values.email, password: values.password };
+        dispatch( authPushUserData(user) );
         dispatch( authRequestToBase() );
     };
 
     const Registration = () => { 
-        console.log('ss')
         dispatch( authOpenRegistration() ) 
     };
 

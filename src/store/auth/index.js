@@ -1,9 +1,16 @@
 export { reducer } from './reducer';
+
+export {
+  authRequestToBase,
+  authCreateAccountOnBase,
+} from './aythUtils';
+
 export {
   actions,
   authSetInTrue,
   authOpenRegistration,
   authOpenLogin,
-  authRequestToBase,
+  authPushUserData,
+  authOpenErrorPage
 } from './actions';
 
