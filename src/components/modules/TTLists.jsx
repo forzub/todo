@@ -75,7 +75,7 @@ const TTLists = () => {
             />}
           <MyButton
             type='button'
-            className={`${Style.tt_l_btn} + ${Style.tt_btn}`}
+            className={`${Style.tt_newList_btn} + ${Style.tt_btn}`}
             onClick={() => onShow()}
           >
             {!isVisibleNewList ? 'Добавить новый список' : 'Закрыть'}
